@@ -125,8 +125,12 @@
     </div>
 
     <footer>
-        <a href="{{ url_for('home') }}">Home</a>&nbsp
-        <a href="{{ url_for('about') }}">About Us</a>
+        <button class="btn btn-secondary btn-sm text-nowrap" type="button">
+            <a href="{{ url_for('home') }}">Home</a>
+        </button> 
+        <button class="btn btn-secondary  btn-sm text-nowrap" type="button">   
+            <a href="{{ url_for('about') }}">About Us</a>
+        </button>
         <p>Copyright 2021. Built by Suzanne Milligan.</p>
     </footer>   
 

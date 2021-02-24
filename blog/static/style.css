@@ -12,6 +12,8 @@ body {
 .navbar {
     
     text-align: center;
+    font-family:'Potta One', cursive;
+    color:#333644 ;
 }
 
 .container-fluid {
@@ -22,7 +24,7 @@ body {
     background-color: #C65F63  !important;
     border-color: #F6E1B8 !important;
 }
-h1 h2 h3{
+h1, h2, h3{
     font-family:'Potta One', cursive;
     color:#333644 ;
     
@@ -37,6 +39,8 @@ h1 h2 h3{
 
 
 footer {
+    font-family:'Potta One', cursive;
+    color:#333644 ;
     position: fixed;
     left: 0;
     bottom: 0;
