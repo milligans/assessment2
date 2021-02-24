@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<p>For the search term <i><b>{{ search_string }}</b></i> the returned results were as follows: </p>
+<br>
+
+<br>
+<br>
+
+{% for result in results %}
+    
+   
+    <tr>
+    <td>{{ result }}</td>
+      
+    </tr>
+   
+    <br>
+    <br>
+
+{% endfor %}
+
+{% endblock  %}

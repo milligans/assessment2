@@ -1,0 +1,47 @@
+
+body {
+    color: #333644;
+    background-color: #F6E1B8;
+   
+    font-family: 'Merriweather', serif;
+}
+.content {
+    color: #84577C;
+    
+}
+.navbar {
+    
+    text-align: center;
+}
+
+.container-fluid {
+    padding:0;
+}
+/* changing button color examples https://www.codegrepper.com/code-examples/assembly/bootstrap+change+button+color */
+.btn-secondary {
+    background-color: #C65F63  !important;
+    border-color: #F6E1B8 !important;
+}
+h1 h2 h3{
+    font-family:'Potta One', cursive;
+    color:#333644 ;
+    
+   }
+   
+
+/* .top .title {
+     width: 700px;
+     margin: 38px auto 0 auto; 
+   } */
+   
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+     width: 100%;
+    background-color: #84577C;
+    color: #333644;
+    text-align: center;
+   }

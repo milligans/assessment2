@@ -1,0 +1,9 @@
+*.pyc
+venv/
+__pycache__/
+.project
+*.pyo
+*~
+X*.py
+*.lnk
+virtual.bat
