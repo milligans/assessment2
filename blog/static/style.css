@@ -12,10 +12,12 @@ body {
     min-height: 100vh;
     
 }
+
 /* code to make the central area of the site full length of screen from https://stackoverflow.com/questions/23046801/height-not-100-on-container-fluid-even-though-html-and-body-are */
 .container-fluid {
     height: 100%;
     overflow-y: hidden; /* don't show content that exceeds my height */
+    padding:0;
 }
 
 .navbar {
@@ -24,10 +26,13 @@ body {
     font-family:'Potta One', cursive;
     color:#333644 ;
 }
+/* 
+#aboutHeading {
 
-.container-fluid {
-    padding:0;
-}
+    text-align: center;
+    margin: auto;
+
+} */
 
 /* reference for links css https://www.w3schools.com/css/css_link.asp */
 /* unvisited link */
