@@ -1,13 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Please login</h1>
+<div class = "mx-auto pt-3" style="width:80%">
+    <div class="row pt-5 pb-5" style="background-color: #C65F63">
+        <h3>Please login</h3>
+    </div>    
     <form method="POST" action="">
+
         {{ form.csrf_token }}
-        {{ form.email.label }} {{ form.email}}
-        {{ form.password.label }} {{ form.password}}
-      
-        <input type="submit", value="Log In" >
-
+        <div class="row pt-5 pb-5">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <b>{{ form.email.label }}</b> {{ form.email}}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <b>{{ form.password.label }}</b> {{ form.password}}
+                </div>    
+            </div>
+               
+                <button class="btn btn-secondary pe-3 me-2" type="submit">Login</button>
+             
+        </div>
     </form>
-
+</div>
 {% endblock content%}

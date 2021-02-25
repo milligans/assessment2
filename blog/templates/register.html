@@ -1,25 +1,74 @@
 {% extends "layout.html" %}
 {% block content %}
-<form method="POST" action="">
-        {{ form.csrf_token }}
-        {{ form.username.label }} {{ form.username}}
-        {% for error in form.username.errors %}
-        <span style="color: red;">[{{ error }}]</span>{% endfor %}
-        {{ form.firstname.label }} {{ form.firstname}}
-        {{ form.lastname.label }} {{ form.lastname}}
-        {{ form.email.label }} {{ form.email}}
-        {% for error in form.email.errors %}
-        <span style="color: red;">[{{ error }}]</span>{% endfor %}
-        {{ form.password.label }} {{ form.password}}
-        {% for error in form.password.errors %}
-        <span style="color: red;">[{{ error }}]</span>{% endfor %}
-        {{ form.confirm_password.label }} {{ form.confirm_password}}
-        {% for error in form.confirm_password.errors %}
-        <span style="color: red;">[{{ error }}]</span>{% endfor %}
-        <br>
-    <input type="submit", value="Register" >
-
-</form>
-
+<div class = "mx-auto pt-3" style="width:80%">
+    <div class="row pt-5 pb-5" style="background-color: #C65F63">
+        <h3>Registration Form</h3>
+    </div>
+    <form method="POST" action="">
+        <div class="row pt-5 pb-1">
+            
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    {{ form.csrf_token }}
+                    <b>{{ form.username.label }}</b> 
+                    <br>    
+                    {{ form.username}}
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>{% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <b>{{ form.firstname.label }}</b>
+                    <br>
+                    {{ form.firstname}}
+                </div>
+            </div>
+                
+        </div>
+        
+        <div class="row pt-1 pb-1"> 
+            <div class="col-lg-6">
+                <div class="mb-3">                    
+                    <b>{{ form.lastname.label }}</b>
+                    <br>
+                     {{ form.lastname}}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3">        
+                   <b>{{ form.email.label }}</b>
+                   <br> 
+                    {{ form.email}}
+                    {% for error in form.email.errors %}
+                    <span style= "color: red;">[{{ error }}]</span>{% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row pt-1 pb-1">        
+            <div class="col-lg-6">
+                <div class="mb-3">   
+                    <b>{{ form.password.label }}</b>
+                    <br>
+                    {{ form.password}}
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>{% endfor %}
+                </div>
+            </div>
+                <div class="col-lg-6">
+                    <div class="mb-3">           
+                        <b>{{ form.confirm_password.label }}</b>
+                        <br>
+                        {{ form.confirm_password}}
+                        {% for error in form.confirm_password.errors %}
+                        <span style="color: red;">[{{ error }}]</span>{% endfor %}
+                    </div>
+                </div>
+        </div> 
+        <div class="row pt-5 pb-5">
+            <button class="btn btn-secondary pe-3 me-2" type="submit">Register</button> 
+        </div>
+    </form>
+</div>
 
 {% endblock content %}

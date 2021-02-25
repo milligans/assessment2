@@ -108,20 +108,22 @@
         </div>
 
 
-    <div>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul class=flashes>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-    </div>
+
 
     <div class = container id ="wrapping">
+
         <div class ="container-md" id="home_content">
+            <div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                            <b><li>{{ message }}</li></b>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
    
             {% block content %}
             {% endblock %}
