@@ -1,24 +1,30 @@
 {% extends "layout.html" %}
+
 {% block content%}
-<p>To arrange files by date please click here <a href="{{url_for('ascpost')}}">for <b>ascending</b> order.</a></p>
-<br>
-and for descending order please click here <a href="{{url_for('descpost')}}" >for <b>descending</b> order.</a>
+<div class = "mx-auto" style="width:80%">
+    
+        <h3>All Posts</h3>
+    To arrange files by date please click here <a href="{{url_for('ascpost')}}">for <b>ascending</b> order.</a>
+        and please click here <a href="{{url_for('descpost')}}" >for <b>descending</b> order.</a>
 
-    <h3>All Posts</h3>
-    <div class = "wrapper">
-   
-        
-    </div>
-    <div class = "content">
-    {% for post in posts %}
 
-    <p><a href ="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" >
-    "{{ post.title }}"</a> 
-    by {{ post.user.username }}
-    on {{ post.date }}
-    <b> Subtitle: {{ post.subtitle }}</b>
-</p>
-<p>{{ post.content |safe }}</p>
-{% endfor %}
+
+        {% for post in posts %}
+
+        <p><a href ="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" class="rounded" style="border:0.1rem solid; border-color: #333644" width="100px" height = "100px" >
+    <h3>"{{ post.title }}"</h3></a> 
+    <em>by {{ post.user.username }}</em>
+        on {{ post.date }}
+        <b> Subtitle: {{ post.subtitle }}</b>
+        <br>
+
+        {{ post.content |safe }}</p>
+        {% endfor %}
+    
+    <br>
+    <br>
+    <br>
+    <b>End of posts! Check back often for new content.</b>   
+</div>
 
 {% endblock content%}

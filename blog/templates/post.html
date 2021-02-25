@@ -1,38 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<link rel=stylesheet type=text/css href="{{ url_for('static',
-filename='style.css') }}">
-<title>Sue Milligan</title>
-</head>
-<body>
-    {% extends "layout.html" %}
+{% extends "layout.html" %}
+{% block content %}
+<div class = "mx-auto" style="width:80%">
+    <a href ="{{ url_for('post', post_id=post.id) }}">
+        <img src="{{ url_for('static', filename='img/' + post.image_file) }}"class="rounded" style="border:0.1rem solid; border-color: #333644" width="200px" height = "200px">
+            <h3>"{{ post.title }}"</h3>
+    </a> 
+    <b>{{ post.subtitle}}</b><br>
+    <em>by {{ post.user.username }}</em>
+    <p>{{ post.content |safe }}</p>
+    <br>
+    <br>
+    <b>Comments</b> 
+    <p>Only logged on users can comment, please log on <a href="{{url_for('login')}}"><em>here</em></a> if you aren't logged on already.</p>       
+    {% for comment in comments %}
+    <p><em>"{{ comment.content }}"</em>&nbsp<small>Author:{{ comment.user.username }}</small></p>
+    {% endfor %}
 
-    {% block content %}
-<div id="content">
-
-<p><a href ="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" >
-    "{{ post.title }}"</a> 
-    <b>{{ post.subtitle}}</b>
-    by {{ post.user.username }}
-</p>
-<p>{{ post.content |safe }}</p>
-
-    
-{% for comment in comments %}
-<p>"{{ comment.content }}"&nbsp<small>Author:{{ comment.user.username }}</small></p>
-{% endfor %}
-<form method="POST" action="{{ url_for('post_comment', post_id=post.id) }}">
-{{ form.hidden_tag() }}
-<div class="">
-{{ form.comment.label }} {{ form.comment }} {% for error in form.comment.errors %}<span style="color: red;">[{{ error }}]</span>
-{% endfor %}
+    <form method="POST" action="{{ url_for('post_comment', post_id=post.id) }}">
+        <div class="pt-2 ps-1 pe-5 mb-5 pt-2">
+            {{ form.hidden_tag() }}
+            <div class="">
+            <b>{{ form.comment.label }}</b> {{ form.comment }}
+            <button class="btn btn-secondary btn-sm me-2" type="submit">Comment</button> 
+            {% for error in form.comment.errors %}<span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            </div>
+            <div class="">{{ form.submit() }}</div>
+        </div>    
+    </form>
 </div>
-<div class="">{{ form.submit() }}</div>
-</form>
 {% endblock content %}
-    </div>
+   
 
-</body>
-</html>
