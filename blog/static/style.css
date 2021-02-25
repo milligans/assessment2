@@ -28,6 +28,27 @@ body {
 .container-fluid {
     padding:0;
 }
+
+/* reference for links css https://www.w3schools.com/css/css_link.asp */
+/* unvisited link */
+a:link {
+    color:#333644;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #333644;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color:#84577C;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #333644;
+  }
 /* changing button color examples https://www.codegrepper.com/code-examples/assembly/bootstrap+change+button+color */
 .btn-secondary {
     background-color: #C65F63  !important;

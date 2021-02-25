@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class = "mx-auto" style="width:80%">
+<div class = "mx-auto pt-3" style="width:80%">
     <a href ="{{ url_for('post', post_id=post.id) }}">
         <img src="{{ url_for('static', filename='img/' + post.image_file) }}"class="rounded" style="border:0.1rem solid; border-color: #333644" width="200px" height = "200px">
             <h3>"{{ post.title }}"</h3>
