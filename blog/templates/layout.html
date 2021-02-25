@@ -13,14 +13,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@100&family=Sacramento&display=swap" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">            
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet"> 
+    <!-- my favicon            -->
     <link rel = "icon" href = "{{url_for('static', filename='img/favicon.ico')}}" >
     <title>Sue Milligan</title>
 </head>
 
 <body>
 
-    <header>
+    
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84577C">
                 <div class="container-fluid">
@@ -105,7 +106,7 @@
                 </div>
             </nav>
         </div>
-    <header>
+
 
     <div>
         {% with messages = get_flashed_messages() %}
@@ -119,11 +120,14 @@
         {% endwith %}
     </div>
 
-    <div id="content">
-        {% block content %}
-        {% endblock %}
+    <div class = container id ="wrapping">
+        <div class ="container-md" id="home_content">
+   
+            {% block content %}
+            {% endblock %}
+        
+        </div>
     </div>
-
     <footer>
         <button class="btn btn-secondary btn-sm text-nowrap" type="button">
             <a href="{{ url_for('home') }}">Home</a>

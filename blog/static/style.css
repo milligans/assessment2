@@ -1,13 +1,19 @@
 
 body {
     color: #333644;
-    background-color: #F6E1B8;
+    background-color: #C65F63;
+    background-image: url("/img/forest.jpg");
    
     font-family: 'Merriweather', serif;
+
 }
-.content {
-    color: #84577C;
+#home_content {
+    background-color: #F6E1B8;
+    height: 100%;
     
+}
+#wrapping {
+    height: 100vh;
 }
 .navbar {
     

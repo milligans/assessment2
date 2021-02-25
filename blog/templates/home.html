@@ -1,43 +1,48 @@
 {% extends "layout.html" %}
-{% block content %}
 
-{% if reg_flag == True %}
-<b>Thank you for registering</b>
-    
-<a href = '{{url_for("login")}}'><b><em>Now please logon></em></b></a>
-{% endif %}
-
-<form method="post">
-  <dl>
-    {{ form.search.label }} {{form.search}}
-    <p>
-        {% for error in form.search.errors %}
-        <span style="color: red;">[{{ error }}]</span>{% endfor %}
- 
-  </p>
-
-</dl>
-  <p><input type="submit" value="Search">
-</p></form>
+  {% block content %}
 
 
-<div class = "wrapper">
+      {% if reg_flag == True %}
+      <b>Thank you for registering</b>
+        
+      <a href = '{{url_for("login")}}'><b><em>Now please logon></em></b></a>
+      {% endif %}
+
+      <form method="post">
+      <dl>
+        {{ form.search.label }} {{form.search}}
+        <p>
+            {% for error in form.search.errors %}
+            <span style="color: red;">[{{ error }}]</span>{% endfor %}
+
+      </p>
+
+      </dl>
+      <p><input type="submit" value="Search">
+      </p></form>
+
+
+
+        
+      <div class="title"><h3>Welcome to Suzanne Milligan's Blog</h3>
+          <p>Article previews below, please click on any that are of interest.</p>
+      </div>
+        <div class="preview">
+          {% for post in posts %}
+
+          <p><a href ="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" >
+            "{{ post.title }}"</a> 
+              by {{ post.user.username }}
+              on {{ post.date }}
+            <b> {{ post.subtitle }}</b>
+          </p>
+        
+      
+      {% endfor %}
+        </div>
+      <div class = "allpostslink">
+        <h2><a href ="{{ url_for('allposts') }}" >To access all posts </a> </h2>
+      </div> 
    
-        <div class="title"><h3>Welcome to Suzanne Milligan's Blog</h3></div>
-        <p>Article previews below, please click on any that are of interest.</p>
-    </div>
-    <div class = "content">
-    {% for post in posts %}
-
-    <p><a href ="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" >
-    "{{ post.title }}"</a> 
-    by {{ post.user.username }}
-    on {{ post.date }}
-    <b> Subtitle: {{ post.subtitle }}</b>
-</p>
-
-{% endfor %}
-<h2><a href ="{{ url_for('allposts') }}" >To access all posts </a> </h2>
-
-</div>
 {% endblock content %}
