@@ -26,20 +26,20 @@
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84577C">
                 <div class="container-fluid">
 
-                    <a class = "navbar-brand ms-5 me-5" href="{{ url_for('allposts') }}">
-                        <img src= "{{ url_for('static', filename='img/default.jpg') }}" alt="stick_man_image">
+                    <a class = "navbar-brand ms-5 me-5 ps-5 pe-5" href="{{ url_for('allposts') }}">
+                        <img src= "{{ url_for('static', filename='img/default.jpg') }}" alt="stick_man_image"class="rounded" style="border:0.1rem solid; border-color: #333644">
                     </a>
             
                     <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#blogMenuToggle" aria-controls="blogMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button> 
 
-                    <span class="navbar-text ms-5 me-5">
+                    <span class="navbar-text ms-5 me-5 ps-5 pe-5">
                         <h1>Suzanne Milligan's Blog</h1>
                     </span>
 
                     <div class="collapse navbar-collapse" id="blogMenuToggle">
-                        <ul class="navbar-nav ms-5">
+                        <ul class="navbar-nav ms-5 ps-5">
                         
                             {% if current_user.is_authenticated %}
                             

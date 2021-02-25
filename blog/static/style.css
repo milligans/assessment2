@@ -35,7 +35,10 @@ h1, h2, h3{
     color:#333644 ;
     
    }
-   
+.bpreviews {
+    text-align: center;
+    margin:auto;
+}
 
 /* .top .title {
      width: 700px;
