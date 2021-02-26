@@ -24,7 +24,7 @@
 <body>
 
     
-        <div class="container-fluid">
+        
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84577C">
                 <div class="container-fluid">
 
@@ -39,75 +39,75 @@
                     <span class="navbar-text ms-5 me-5 ps-5 pe-5">
                         <h1>Suzanne Milligan's Blog</h1>
                     </span>
-
                     <div class="collapse navbar-collapse" id="blogMenuToggle">
                         <ul class="navbar-nav ms-5 ps-5">
-                        
-                            {% if current_user.is_authenticated %}
-                            
-                                <li class="nav-item">
-                                    <span class="navbar-text">
-                                        Hello, {{ current_user.username }}!
-                                    </span>
 
-                                    <button class="btn btn-secondary me-2" type="button" >
-                                        <a class="nav-link" href= "{{ url_for('user', username=current_user.username) }}" >Profile Page</a>
-                                    </button>
-                                </li>
-                            
-                                <li class="nav-item">
-                                    <button class="btn btn-secondary me-2" type="button">
-                                        <a class= "nav-link" href="{{ url_for('logout') }}">Logout</a>
-                                    </button>
-                                </li>            
-
-                            {% else %}
+                        {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <span class="navbar-text">
+                                    Hello, {{ current_user.username }}!
+                            </span>
+                        <li>
+                        <li class="nav-item">    
+                            <button class="btn btn-secondary me-2 text-nowrap" type="button" >
+                                <a class="nav-link" href= "{{ url_for('user', username=current_user.username) }}" >Profile Page</a>
+                            </button>
+                        </li>
                                 
-                                <li class="nav-item">
-                                    <span class="navbar-text">
-                                        Hello, Guest! 
-                                    </span>
-
-                                    <button class="btn btn-secondary me-2" type="button">
-                                        <a  class="nav-link" href="{{ url_for('login') }}">Login</a>
-                                    </button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <span class="navbar-text">
-                                        or
-                                    </span>
-
-                                    <button class="btn btn-secondary me-2" type="button">
-                                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-                                    </button>
-                                </li>
-                            
-                            {% endif %}
-
-                            <li class="nav-item">
+                        <li class="nav-item">
                                 <button class="btn btn-secondary me-2" type="button">
-                                    <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                                    <a class= "nav-link" href="{{ url_for('logout') }}">Logout</a>
                                 </button>
-                            </li>
+                        </li>            
 
-                            <li class="nav-item">
-                                <button class="btn btn-secondary me-2 text-nowrap" type="button">
-                                    <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
+                        {% else %}
+                        <li class="nav-item">
+                            <span class="navbar-text">
+                                Hello, Guest! 
+                            </span>
+                        </li>
+                        <li class="nav-item">    
+                            <button class="btn btn-secondary me-2" type="button">
+                                <a  class="nav-link" href="{{ url_for('login') }}">Login</a>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                                <span class="navbar-text">
+                                    or
+                                </span>
+                        </li>
+                        <li class="nav-item">        
+                                <button class="btn btn-secondary me-2" type="button">
+                                    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
                                 </button>
-                            </li>
+                        </li>
+                        
+                                {% endif %}
 
-                            <li class="nav-item">
-                                <button class="btn btn-secondary me-2 text-nowrap" type="button">
-                                    <a class="nav-link" href ="{{ url_for('allposts') }}" >All Posts </a>
-                                </button>
-                            </li>
-                        </ul>
+                                <li class="nav-item">
+                                    <button class="btn btn-secondary me-2" type="button">
+                                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                                    </button>
+                                </li>
+
+                                <li class="nav-item">
+                                    <button class="btn btn-secondary me-2 text-nowrap" type="button">
+                                        <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
+                                    </button>
+                                </li>
+
+                                <li class="nav-item">
+                                    <button class="btn btn-secondary me-2 text-nowrap" type="button">
+                                        <a class="nav-link" href ="{{ url_for('allposts') }}" >All Posts </a>
+                                    </button>
+                                </li>
                     </div>
-
-                </div>
+                            
+                       
+                    
+                </div>    
             </nav>
-        </div>
+       
 
 
 
