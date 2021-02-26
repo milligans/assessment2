@@ -7,3 +7,4 @@ __pycache__/
 X*.py
 *.lnk
 virtual.bat
+.vscode

@@ -6,12 +6,15 @@
         <h3>All Posts</h3>
         To arrange files by date please click here <a href="{{url_for('ascpost')}}">for <b>ascending</b> order.</a>
         and please click here <a href="{{url_for('descpost')}}" >for <b>descending</b> order.</a>
+        <br>
 
 
 
         {% for post in posts %}
 
-        <p><a href ="{{ url_for('post', post_id=post.id) }}"><img src="{{ url_for('static', filename='img/' + post.image_file) }}" class="rounded" style="border:0.1rem solid; border-color: #333644" width="100px" height = "100px" >
+        <a href ="{{ url_for('post', post_id=post.id) }}">
+        <img src="{{ url_for('static', filename='img/' + post.image_file) }}" class="rounded" style="border:0.1rem solid; border-color: #333644" width="100px" height = "100px" >
+        </a>
         <h3>{{ post.title }}</h3></a> 
         <em>by {{ post.user.username }}</em>
         on {{ post.date }}

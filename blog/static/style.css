@@ -13,6 +13,7 @@ body {
     
 }
 
+
 /* code to make the central area of the site full length of screen from https://stackoverflow.com/questions/23046801/height-not-100-on-container-fluid-even-though-html-and-body-are */
 .container-fluid {
     height: 100%;
@@ -20,19 +21,23 @@ body {
     padding:0;
 }
 
+/* #footer-stack{
+    height: 10%
+} */
+
 .navbar {
     
     text-align: center;
     font-family:'Potta One', cursive;
     color:#333644 ;
 }
-/* 
-#aboutHeading {
-
-    text-align: center;
-    margin: auto;
-
-} */
+footer {
+  font-family:'Potta One', cursive;
+  color:#333644 ;
+  background-color: #84577C;
+  text-align: center;
+  max-height: 3rem;
+ }
 
 /* reference for links css https://www.w3schools.com/css/css_link.asp */
 /* unvisited link */
@@ -47,7 +52,7 @@ a:link {
   
   /* mouse over link */
   a:hover {
-    color:#84577C;
+    color:#C65F63;
   }
   
   /* selected link */
@@ -59,31 +64,44 @@ a:link {
     background-color: #C65F63  !important;
     border-color: #F6E1B8 !important;
 }
-h1, h2, h3{
+h1, h2, h3, h4, h5{
     font-family:'Potta One', cursive;
     color:#333644 ;
     
    }
-.bpreviews {
+/* .bpreviews,.resultpreviews {
     text-align: center;
     margin:auto;
 }
-
-/* .top .title {
-     width: 700px;
-     margin: 38px auto 0 auto; 
-   } */
-   
+ */
 
 
-footer {
-    font-family:'Potta One', cursive;
-    color:#333644 ;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-     width: 100%;
-    background-color: #84577C;
-    color: #333644;
-    text-align: center;
-   }
+/* Rules for sizing the icon. From https://google.github.io/material-design-icons/ */
+.material-icons.md-18 {
+    font-size: 18px; 
+  }
+.material-icons.md-24 { 
+  font-size: 24px; 
+}
+.material-icons.md-36 { 
+  font-size: 36px; 
+}
+.material-icons.md-48 { 
+  font-size: 48px; 
+}
+
+/* Rules for using icons as black on a light background. From https://google.github.io/material-design-icons/ */
+.material-icons.md-dark {
+     color: rgba(0, 0, 0, 0.54); 
+}
+.material-icons.md-dark.md-inactive { 
+  color: rgba(0, 0, 0, 0.26); 
+}
+
+/* Rules for using icons as white on a dark background. From https://google.github.io/material-design-icons/ */
+.material-icons.md-light { 
+    color: rgba(255, 255, 255, 1); 
+}
+.material-icons.md-light.md-inactive { 
+    color: rgba(255, 255, 255, 0.3); 
+}

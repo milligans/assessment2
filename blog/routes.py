@@ -28,9 +28,8 @@ def search_results(search):
     
     qry=db.session.query(Post).filter(Post.content.contains(search_string))
     qry2=db.session.query(Post).filter(Post.title.contains(search_string))
-    
-    results = qry.all() + qry2.all()
-
+    qry3=db.session.query(Post).filter(Post.subtitle.contains(search_string))
+    results = qry.all() + qry2.all() + qry3.all()
     
     if not results:
       flash('No results found!')
@@ -112,9 +111,8 @@ def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     qry=db.session.query(Post,Comment ).filter(Comment.post_id ==Post.id).filter(Comment.author_id==current_user.id )
     results = qry.all()
-    comments=Comment.query.all()
-    posts=Post.query.all()
-    return render_template('user.html', user=user,  results=results, posts=posts, comments=comments)
+
+    return render_template('user.html', user=user,  results=results)
    
 @app.route('/descposts', methods=['GET', 'POST'])
 def descpost():

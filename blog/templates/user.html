@@ -3,26 +3,27 @@
 <h2>Hello, {{ current_user.username }}!</h2>
 <p>You have left comments on the following posts:</p>
 
-<b>{{ user_ids }}</b>
-<br>
+
 
 <!-- reference for method https://stackoverflow.com/questions/30056622/how-to-iterate-over-a-list-of-list-in-jinja -->
 
-{% for result in results %}
-    {% for elem in result %}
-    
-    <tr>
-    <td>{{ elem }}</td>
-     
-    </tr>
-    
-    <br>
+    {% for result in results %}
+       
+        {% for elem in result %}
 
+            <br>
+            <a href ="{{ url_for('post', post_id=elem.id) }}"><b>{{ elem.title }}</b></a>
+            <small> {{ elem.date }}</small>
+            <em>{{ elem.comtent }}</em>
+            
+            
+
+        {% endfor %}
+        <br>
     {% endfor %}
-    <br>
-    <br>
-{% endfor %}
 
 
 
 {% endblock %}
+
+

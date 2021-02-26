@@ -1,21 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class = "mx-auto pt-3" style="width:80%">
-    <a href ="{{ url_for('post', post_id=post.id) }}">
-        <img src="{{ url_for('static', filename='img/' + post.image_file) }}"class="rounded" style="border:0.1rem solid; border-color: #333644" width="200px" height = "200px">
-            <h3>{{ post.title }}</h3>
-    </a> 
-    <b>{{ post.subtitle}}</b><br>
+    <h3>{{ post.title }} </h3>
+    <div class = "row">
+        <div class="col-lg-3 d-flex">
+            <img src="{{ url_for('static', filename='img/' + post.image_file) }}"class="rounded" style="border:0.1rem solid; border-color: #333644" width="200px" height="200px"> 
+        </div>
+        <div class="col">    
+            <h4><em>"{{ post.subtitle}}"</em></h4>
+        </div>
+    </div>        
     <em>by {{ post.user.username }}</em>
     <p>{{ post.content |safe }}</p>
     <br>
     <br>
-    <b>Comments</b> 
-    <p>Only logged on users can comment, please log on <a href="{{url_for('login')}}"><em>here</em></a> if you aren't logged on already.</p>       
-    {% for comment in comments %}
-    <p><em>"{{ comment.content }}"</em>&nbsp<small>Author:{{ comment.user.username }}</small></p>
-    {% endfor %}
 
+
+    <b>Please leave a comment</b>
+    <p>Only logged on users can comment, please log on <a href="{{url_for('login')}}"><em>here</em></a> if you aren't logged on already.</p>    
     <form method="POST" action="{{ url_for('post_comment', post_id=post.id) }}">
         <div class="pt-2 ps-1 pe-5 mb-5 pt-2">
             {{ form.hidden_tag() }}
@@ -27,7 +29,18 @@
             </div>  
         </div>    
     </form>
+
+    <h3>Comments</h3>  
+    {% for comment in comments %}
+    <p><em>"{{ comment.comtent }}"</em>&nbsp<small>Author:{{ comment.user.username }}</small></p>
+    {% endfor %}
+
+    <a href="{{ url_for('allposts') }}"><b>Back to all posts...</b></a>
 </div>
+<br>
+<br>
+<br>
+<br>
 {% endblock content %}
    
 
