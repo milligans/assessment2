@@ -15,7 +15,7 @@
                 <img src="{{ url_for('static', filename='img/'+ result.image_file) }}" class="rounded" style="border:0.1rem solid; border-color: #333644" width="100px" height = "100px">
             </a>
             <br>
-            <b>{{ result.title }}</b>
+            <a href="{{url_for('post', post_id=result.id) }}"><b>{{ result.title }}</b></a>
             <br>
             <small>by {{ result.user.username }}</small>
             <br>
@@ -24,7 +24,7 @@
             <br>
         </div>
     
-       
+        
         {% endfor %}
     </div>
 

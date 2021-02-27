@@ -32,7 +32,7 @@ footer {
   color:#333644 ;
   background-color: #84577C;
   text-align: center;
-  /* max-height: 3rem; */
+  width: 100%;
 }
 
 /* reference for links css https://www.w3schools.com/css/css_link.asp */
