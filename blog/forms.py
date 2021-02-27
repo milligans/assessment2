@@ -10,7 +10,7 @@ class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'placeholder':'email'})
     firstname = StringField('First Name', validators=[DataRequired(), Length(max=30)],  render_kw={'placeholder':'first name'})
     lastname = StringField('Last Name', validators=[DataRequired(), Length(max=30)],  render_kw={'placeholder':'last name'})
-    password = PasswordField('Password', validators=[DataRequired(), Regexp('^.{6,30}$', message='Your password should be between 6 and 8 characters long and contain at least one number.')],  render_kw={'placeholder':'password'})
+    password = PasswordField('Password', validators=[DataRequired(), Regexp('^.{6,30}$', message='Your password should be between 6 and 15 characters long and contain at least one number.')],  render_kw={'placeholder':'password'})
     
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password', message = 'Passwords do not match.')],  render_kw={'placeholder':'confirm password'})
 

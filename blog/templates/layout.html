@@ -23,31 +23,61 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84577C">
+        <div class="container-fluid">
+
+            <a class = "navbar-brand ms-5 me-5 ps-5 pe-5" href="{{ url_for('home') }}">
+                <img src= "{{ url_for('static', filename='img/sue.jpg') }}" alt="sue_image"class="rounded-pill" style="border:0.1rem solid; border-color: #333644" width="100px" height="100px">
+            </a>
     
-        
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84577C">
-                <div class="container-fluid">
+            <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#blogMenuToggle" aria-controls="blogMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
 
-                    <a class = "navbar-brand ms-5 me-5 ps-5 pe-5" href="{{ url_for('home') }}">
-                        <img src= "{{ url_for('static', filename='img/sue.jpg') }}" alt="sue_image"class="rounded-pill" style="border:0.1rem solid; border-color: #333644" width="100px" height="100px">
-                    </a>
-            
-                    <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#blogMenuToggle" aria-controls="blogMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> 
+            <span class="navbar-text ms-5 me-5 ps-5 pe-5">
+                <h1>Suzanne Milligan's Blog</h1>
+            </span>
+            <div class="collapse navbar-collapse" id="blogMenuToggle">
+                <ul class="navbar-nav ms-5 ps-5">
 
-                    <span class="navbar-text ms-5 me-5 ps-5 pe-5">
-                        <h1>Suzanne Milligan's Blog</h1>
-                    </span>
-                    <div class="collapse navbar-collapse" id="blogMenuToggle">
-                        <ul class="navbar-nav ms-5 ps-5">
-
-                        {% if current_user.is_authenticated %}
+                    {% if current_user.is_authenticated %}
+                    
                         <li class="nav-item">
-                            <span class="navbar-text">
+                            <span class="navbar-text pe-4">
                                     Hello, {{ current_user.username }}!
                             </span>
                         <li>
+
+                    {% else %}
+
+                        <li class="nav-item">
+                            <span class="navbar-text pe-4">
+                                Hello, Guest! 
+                            </span>
+                        </li>
+        
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <button class="btn btn-secondary me-2" type="button">
+                            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-secondary me-2 text-nowrap" type="button">
+                            <a class="nav-link" href ="{{ url_for('allposts') }}" >All Posts </a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-secondary me-2 text-nowrap" type="button">
+                            <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
+                        </button>
+                    </li>
+
+                    
+                                
+                    {% if current_user.is_authenticated %}
+
                         <li class="nav-item">    
                             <button class="btn btn-secondary me-2 text-nowrap" type="button" >
                                 <a class="nav-link" href= "{{ url_for('user', username=current_user.username) }}" >Profile Page</a>
@@ -55,72 +85,44 @@
                         </li>
                                 
                         <li class="nav-item">
-                                <button class="btn btn-secondary me-2" type="button">
-                                    <a class= "nav-link" href="{{ url_for('logout') }}">Logout</a>
-                                </button>
+                            <button class="btn btn-secondary me-2" type="button">
+                                <a class= "nav-link" href="{{ url_for('logout') }}">Logout</a>
+                            </button>
                         </li>            
 
-                        {% else %}
-                        <li class="nav-item">
-                            <span class="navbar-text">
-                                Hello, Guest! 
-                            </span>
-                        </li>
+                    {% else %}
+
                         <li class="nav-item">    
                             <button class="btn btn-secondary me-2" type="button">
                                 <a  class="nav-link" href="{{ url_for('login') }}">Login</a>
                             </button>
                         </li>
+                        
                         <li class="nav-item">
-                                <span class="navbar-text">
-                                    or
-                                </span>
-                        </li>
-                        <li class="nav-item">        
-                                <button class="btn btn-secondary me-2" type="button">
-                                    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-                                </button>
+                            <span class="navbar-text pe-2 ps-2">
+                                or
+                            </span>
                         </li>
                         
-                                {% endif %}
-
-                                <li class="nav-item">
-                                    <button class="btn btn-secondary me-2" type="button">
-                                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
-                                    </button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button class="btn btn-secondary me-2 text-nowrap" type="button">
-                                        <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
-                                    </button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button class="btn btn-secondary me-2 text-nowrap" type="button">
-                                        <a class="nav-link" href ="{{ url_for('allposts') }}" >All Posts </a>
-                                    </button>
-                                </li>
-                    </div>
-                            
-                       
-                    
-                </div>    
-            </nav>
-       
-
-
-
+                        <li class="nav-item">        
+                            <button class="btn btn-secondary me-2" type="button">
+                                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                            </button>
+                        </li>
+            
+                    {% endif %}
+            </div>
+        </div>    
+    </nav>
 
     <div class = container id ="wrapping">
-
         <div class ="container-md" id="home_content">
             <div>
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         <ul class=flashes>
                             {% for message in messages %}
-                            <b><li>{{ message }}</li></b>
+                                <b><li>{{ message }}</li></b>
                             {% endfor %}
                         </ul>
                     {% endif %}
@@ -133,23 +135,23 @@
         </div>
     </div>
     <footer>
-                <div class="row">
-                    <div class="col">
-                        <a href="https://www.facebook.com/sue.milligan" target="_blank"><span class="material-icons md-dark md-36">facebook</span></a>
-                        <a href="https://www.facebook.com/sue.milligan" target="_blank">Facebook</a>
-                    </div>
-                    <div class="col">
-                        <a href="https://www.linkedin.com/in/suzanne-milligan-48264598/" target="_blank"><span class="material-icons md-dark md-36">link</span></a>
-                        <a href="https://www.linkedin.com/in/suzanne-milligan-48264598/" target="_blank">LinkedIn</a>    
-                    </div>    
-                    <div class="col">
-                        <a href="mailto:milligansp@cardiff.ac.uk"><span class="material-icons md-dark md-36">email</span></a>
-                        <a href="mailto:milligansp@cardiff.ac.uk">Email me</a>
-                    </div>
-                    <div class="col">
-                        <p>&#169; 2021.Built by Suzanne Milligan.</p>
-                    </div>
-                </div>   
+        <div class="row">
+            <div class="col">
+                <a href="https://www.facebook.com/sue.milligan" target="_blank"><span class="material-icons md-dark md-36">facebook</span></a>
+                <a href="https://www.facebook.com/sue.milligan" target="_blank">Facebook</a>
+            </div>
+            <div class="col">
+                <a href="https://www.linkedin.com/in/suzanne-milligan-48264598/" target="_blank"><span class="material-icons md-dark md-36">link</span></a>
+                <a href="https://www.linkedin.com/in/suzanne-milligan-48264598/" target="_blank">LinkedIn</a>    
+            </div>    
+            <div class="col">
+                <a href="mailto:milligansp@cardiff.ac.uk"><span class="material-icons md-dark md-36">email</span></a>
+                <a href="mailto:milligansp@cardiff.ac.uk">Email me</a>
+            </div>
+            <div class="col">
+                <p>&#169; 2021.Built by Suzanne Milligan.</p>
+            </div>
+        </div>   
     </footer>   
 
     <!-- links to the javascript files needed for bootstrap to run  -->

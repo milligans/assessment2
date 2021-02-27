@@ -4,9 +4,9 @@
     <h3>{{ post.title }} </h3>
     <div class = "row">
         <div class="col-lg-3 d-flex">
-            <img src="{{ url_for('static', filename='img/' + post.image_file) }}"class="rounded" style="border:0.1rem solid; border-color: #333644" width="200px" height="200px"> 
+            <img src="{{ url_for('static', filename='img/' + post.image_file) }}"class="rounded" style="border:0.5rem solid; border-color: #333644" width="200px" height="200px"> 
         </div>
-        <div class="col">    
+        <div class="col text-center my-auto">    
             <h4><em>"{{ post.subtitle}}"</em></h4>
         </div>
     </div>        

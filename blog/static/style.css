@@ -21,10 +21,6 @@ body {
     padding:0;
 }
 
-/* #footer-stack{
-    height: 10%
-} */
-
 .navbar {
     
     text-align: center;
@@ -36,29 +32,29 @@ footer {
   color:#333644 ;
   background-color: #84577C;
   text-align: center;
-  max-height: 3rem;
- }
+  /* max-height: 3rem; */
+}
 
 /* reference for links css https://www.w3schools.com/css/css_link.asp */
 /* unvisited link */
 a:link {
     color:#333644;
-  }
+}
   
   /* visited link */
-  a:visited {
+a:visited {
     color: #333644;
-  }
+}
   
   /* mouse over link */
-  a:hover {
+a:hover {
     color:#C65F63;
-  }
+}
   
   /* selected link */
-  a:active {
+a:active {
     color: #333644;
-  }
+}
 /* changing button color examples https://www.codegrepper.com/code-examples/assembly/bootstrap+change+button+color */
 .btn-secondary {
     background-color: #C65F63  !important;
@@ -68,15 +64,10 @@ h1, h2, h3, h4, h5{
     font-family:'Potta One', cursive;
     color:#333644 ;
     
-   }
-/* .bpreviews,.resultpreviews {
-    text-align: center;
-    margin:auto;
 }
- */
 
 
-/* Rules for sizing the icon. From https://google.github.io/material-design-icons/ */
+/* Rules for sizing the icons. From https://google.github.io/material-design-icons/ */
 .material-icons.md-18 {
     font-size: 18px; 
   }
@@ -90,18 +81,4 @@ h1, h2, h3, h4, h5{
   font-size: 48px; 
 }
 
-/* Rules for using icons as black on a light background. From https://google.github.io/material-design-icons/ */
-.material-icons.md-dark {
-     color: rgba(0, 0, 0, 0.54); 
-}
-.material-icons.md-dark.md-inactive { 
-  color: rgba(0, 0, 0, 0.26); 
-}
 
-/* Rules for using icons as white on a dark background. From https://google.github.io/material-design-icons/ */
-.material-icons.md-light { 
-    color: rgba(255, 255, 255, 1); 
-}
-.material-icons.md-light.md-inactive { 
-    color: rgba(255, 255, 255, 0.3); 
-}
