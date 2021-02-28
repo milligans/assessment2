@@ -1,10 +1,10 @@
 CMT120 - Web Application Development Coursework
 
-1. URL of your website:
+1. URL of your website: http://c2102394-c2102394.apps.cs.cf.ac.uk/
 
 2. 2102394
 
-3. Full (40 characters) CHECKSUM of your last commit on GitLab:
+3. Full (40 characters) CHECKSUM of your last commit on GitLab: (see submitted 2102394-README.txt)
 
 References:
 
@@ -54,3 +54,6 @@ stamaimer 2015. how to iterate over a list of list in jinja. Available at: https
 
 ****** USED AS A GENERAL GUIDE TO USING JINJA TEMPLATES   ***************
 Template Designer Documentation — Jinja Documentation (2.11.x). 2021. Available at: https://jinja.palletsprojects.com/en/2.11.x/templates/#working-with-automatic-escaping [Accessed: 27 February 2021].
+
+******* USED FOR COLOR THEME ON SITE **********
+https://colorhunt.co/palette/106929
