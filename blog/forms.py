@@ -3,7 +3,7 @@ from wtforms import  StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Regexp, InputRequired
 from blog.models import User, Post
 
-# adding a placeholder reference: https://stackoverflow.com/questions/9749742/wtforms-can-i-add-a-placeholder-attribute-when-i-init-a-field
+# adding a placeholder reference: https://stackoverflow.com/questions/9749742/wtforms-can-i-add-a-placeholder-attribute-when-i-init-a-field used throughout forms.py
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=3, max=15)],  render_kw={'placeholder':'username'})
@@ -40,3 +40,5 @@ class CommentForm(FlaskForm):
 
 class SearchForm(FlaskForm):
     search = StringField('Search Text:', validators=[InputRequired()], render_kw={'placeholder': 'Please enter search terms'})
+
+# End of referenced code

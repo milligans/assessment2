@@ -37,6 +37,7 @@ def search_results(search):
    
     return render_template('results.html', results=results, search_string = search_string)
 
+  # end of referenced code
 @app.route('/allposts')
 def allposts():
   posts=Post.query.all()
@@ -113,6 +114,7 @@ def user(username):
     results = qry.all()
 
     return render_template('user.html', user=user,  results=results)
+# end of referenced code
    
 @app.route('/descposts', methods=['GET', 'POST'])
 def descpost():

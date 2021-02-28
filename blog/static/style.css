@@ -20,6 +20,7 @@ body {
     overflow-y: hidden; /* don't show content that exceeds my height */
     padding:0;
 }
+/* end of referenced code */
 
 .navbar {
     
@@ -55,11 +56,15 @@ a:hover {
 a:active {
     color: #333644;
 }
+/* end of referenced code */
+
 /* changing button color examples https://www.codegrepper.com/code-examples/assembly/bootstrap+change+button+color */
 .btn-secondary {
     background-color: #C65F63  !important;
     border-color: #F6E1B8 !important;
 }
+/* end of referenced code */
+
 h1, h2, h3, h4, h5{
     font-family:'Potta One', cursive;
     color:#333644 ;
@@ -80,5 +85,5 @@ h1, h2, h3, h4, h5{
 .material-icons.md-48 { 
   font-size: 48px; 
 }
-
+/* end of referenced code */
 
