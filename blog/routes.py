@@ -19,7 +19,7 @@ def home():
       return search_results(search)
   return render_template('home.html',posts=posts, form=search)
 
-#  search methods derived from https://www.blog.pythonlibrary.org/2017/12/13/flask-101-how-to-add-a-search-form/
+#  search methods derived from https://www.blog.pythonlibrary.org/2017/12/13/flask-101-how-to-add-a-search-form/  
 
 @app.route('/results', methods = ['GET', 'POST'])
 def search_results(search):
@@ -34,8 +34,7 @@ def search_results(search):
     if not results:
       flash('No results found!')
       return redirect('/')
-    # else:
-    #    # display results
+   
     return render_template('results.html', results=results, search_string = search_string)
 
 @app.route('/allposts')
@@ -60,12 +59,13 @@ def post_comment(post_id):
   post=Post.query.get_or_404(post_id)
   form=CommentForm()
   if form.validate_on_submit():
-    db.session.add(Comment(content=form.comment.data,post_id=post.id,author_id=current_user.id))
-    db.session.commit()
-    flash("Your comment has been added to the post","success")
-    return redirect(f'/post/{post.id}')
+      db.session.add(Comment(comtent=form.comment.data,post_id=post.id,author_id=current_user.id))
+      db.session.commit()
+      flash("Your comment has been added to the post","success")
+      return redirect(f'/post/{post.id}')
   comments=Comment.query.filter(Comment.post_id==post.id)
   return render_template('post.html',post=post,comments=comments,form=form)
+
 
 
 @app.route("/register", methods=['GET', 'POST'])

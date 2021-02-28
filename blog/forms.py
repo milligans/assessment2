@@ -11,9 +11,7 @@ class RegistrationForm(FlaskForm):
     firstname = StringField('First Name', validators=[DataRequired(), Length(max=30)],  render_kw={'placeholder':'first name'})
     lastname = StringField('Last Name', validators=[DataRequired(), Length(max=30)],  render_kw={'placeholder':'last name'})
     password = PasswordField('Password', validators=[DataRequired(), Regexp('^.{6,30}$', message='Your password should be between 6 and 15 characters long and contain at least one number.')],  render_kw={'placeholder':'password'})
-    
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password', message = 'Passwords do not match.')],  render_kw={'placeholder':'confirm password'})
-
     submit = SubmitField('Register')
 
     def validate_username(self, username):
@@ -27,10 +25,7 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('That email is already registered. Please choose a different one.')
 
 
-    # # def validate_login(self, login):
-    # #     user = User.query.filter_by()
-    # #     if user is None:
-    #         raise ValidationError('Not logged in')
+
 
 class LoginForm(FlaskForm):
     email=StringField('Email', validators=[DataRequired(), Email()])
@@ -44,8 +39,4 @@ class CommentForm(FlaskForm):
 # search form concept from https://www.blog.pythonlibrary.org/2017/12/13/flask-101-how-to-add-a-search-form/
 
 class SearchForm(FlaskForm):
-    # choices = [('blog post', 'blog post'),
-    #            ('author', 'author'),
-    #            ('comment', 'comment')]
-    # select = SelectField('Search Blog:', choices=choices)
     search = StringField('Search Text:', validators=[InputRequired()], render_kw={'placeholder': 'Please enter search terms'})
