@@ -27,22 +27,19 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #84577C">
-        <div class="container-fluid">
-
+    <nav class="navbar navbar-expand-xxl navbar-light" style="background-color: #84577C">
+        <form class="container-fluid justify-content-start">
             <a class = "navbar-brand ms-5 me-5 ps-5 pe-5" href="{{ url_for('home') }}">
                 <img src= "{{ url_for('static', filename='img/sue.jpg') }}" alt="sue_image"class="rounded-pill" style="border:0.1rem solid; border-color: #333644" width="100px" height="100px">
             </a>
-    
             <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#blogMenuToggle" aria-controls="blogMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> 
-
-            <span class="navbar-text ms-5 me-5 ps-5 pe-5">
-                <h1>Suzanne Milligan's Blog</h1>
-            </span>
             <div class="collapse navbar-collapse" id="blogMenuToggle">
                 <ul class="navbar-nav ms-5 ps-5">
+                    <span class="navbar-text ms-5 me-5 ps-5 pe-5">
+                        <h1>Suzanne Milligan's Blog</h1>
+                    </span>
 
                     {% if current_user.is_authenticated %}
                     
@@ -115,8 +112,9 @@
                         </li>
             
                     {% endif %}
+                </ul>    
             </div>
-        </div>    
+        </form>    
     </nav>
 
     <div class = container id ="wrapping">
