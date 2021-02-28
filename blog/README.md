@@ -1,7 +1,6 @@
 CMT120 - Web Application Development Coursework
 
-1. URL of your website: http://c2102394-c2102394.apps.cs.cf.ac.uk/
-
+1. URL of your website: http://blogfeb-2102394blog.apps.cs.cf.ac.uk/
 2. 2102394
 
 3. Full (40 characters) CHECKSUM of your last commit on GitLab: (see submitted 2102394-README.txt)
