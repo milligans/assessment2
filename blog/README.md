@@ -10,7 +10,7 @@ References:
 
 *****  BOOTSTRAP DOCUMENTATION - USED THROUGHOUT SITE AS LEARNING MATERIAL ON USING BOOTSTRAP ****
 *****  BOOTSTRAP CSS STYLESHEET LINK/REFERENCE ON LINE 6-8 OF LAYOUT.HTML ************
-*****  BOOTSTRAP JAVASCRIPT LINKS/REFRENCE ON LINE 163- 166 OF LAYOUT.HTML ********** 
+*****  BOOTSTRAP JAVASCRIPT LINKS/REFRENCE ON LINE 161- 164 OF LAYOUT.HTML ********** 
 Otto, M. 2021. Introduction. Available at: https://getbootstrap.com/docs/5.0/getting-started/introduction/ [Accessed: 28 February 2021].
 
 ***** REFERENCED ON LINE 17 -23 OF STYLE.CSS  **********************
