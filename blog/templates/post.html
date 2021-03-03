@@ -17,7 +17,7 @@
 
 
     <b>Please leave a comment</b>
-    <p>Only logged on users can comment, please log on <a href="{{url_for('login')}}"><em>here</em></a> if you aren't logged on already.</p>    
+    {% if current_user.is_authenticated %}
     <form method="POST" action="{{ url_for('post_comment', post_id=post.id) }}">
         <div class="pt-2 ps-1 pe-5 mb-5 pt-2">
             {{ form.hidden_tag() }}
@@ -29,7 +29,9 @@
             </div>  
         </div>    
     </form>
-
+    {% else %}
+    <p>Only logged on users can comment, please log on <a href="{{url_for('login')}}"><em>here</em></a> if you aren't logged on already.</p>
+    {% endif %}   
     <h3>Comments</h3>  
     {% for comment in comments %}
     <p><em>"{{ comment.comtent }}"</em>&nbsp<small>Author:{{ comment.user.username }}</small></p>
